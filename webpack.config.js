@@ -4,7 +4,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 
 module.exports = {
   mode: "development",
-  entry: "./main.js",
+  entry: "./src/main.js",
   output: {
     filename: "bundle.js",
   },
@@ -39,7 +39,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "index.html" }),
+    new HtmlWebpackPlugin({ template: "./src/index.html" }),
     new MiniCssExtractPlugin(),
     // new BundleAnalyzerPlugin()
   ],
