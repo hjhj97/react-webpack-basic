@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   mode: "development",
   entry: "./main.js",
@@ -13,6 +15,19 @@ module.exports = {
           presets: ["@babel/preset-env", "@babel/preset-react"],
         },
       },
+      //{
+      //  test: /\.html$/i,
+      //  loader: "html-loader",
+      //  options: {
+      //    minimize: true,
+      //  },
+      //},
     ],
+  },
+  plugins: [new HtmlWebpackPlugin({ template: "index.html" })],
+  devServer: {
+    host: "localhost",
+    port: 3000,
+    open: true,
   },
 };
