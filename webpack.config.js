@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "development",
@@ -29,7 +30,11 @@ module.exports = {
       //},
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "index.html" }), new MiniCssExtractPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({ template: "index.html" }),
+    new MiniCssExtractPlugin(),
+    // new BundleAnalyzerPlugin()
+  ],
   devServer: {
     host: "localhost",
     port: 3000,
